@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<script type="text/javascript">
+	function noselect() {return false;}
+	 
+	function addHandler(event, handler){
+	 if (document.attachEvent) {
+	 document.attachEvent('on' + event, handler);
+	 }
+	 else if (document.addEventListener) {
+	 document.addEventListener(event, handler, false);
+	 }
+	 }
+	 
+	function killSelection(){
+	 if (window.getSelection) {
+	 window.getSelection().removeAllRanges();
+	 }
+	 else if (document.selection && document.selection.clear) {
+	 document.selection.clear();
+	 }
+	 }
+	 
+	function noSelectionEvent(event) {
+	 var event = event || window.event;
+	 
+	 var key = event.keyCode || event.which;
+	if (event.ctrlKey && (key == 65 || key == 85)) {
+	 killSelection();
+	if (event.preventDefault) { event.preventDefault(); }
+	 else { event.returnValue = false; }
+	 return false;
+	 }
+	 }
+	 
+	addHandler('keydown', noSelectionEvent);
+	addHandler('keyup', noSelectionEvent);
+</script>
+<script language=javascript> 
+<!--   
+function click(e) { 
+if (document.all) {
+if (event.button == 2) { 
+alert(message); 
+return false;} 
+} 
+if (document.layers) {
+if (e.which == 3) { 
+alert(message); 
+return false;} 
+} 
+} 
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);} 
+document.onmousedown=click; 
+document.oncontextmenu=function(e){return false}; 
+//--> 
+</script>
+	<head>
+		<title>Arizona Arigon</title>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body>
+
+			<div id="wrapper">
+
+					<header id="header">
+						<div class="logo">
+							<i class="fa-sharp fa-solid fa-code"></i>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Arizona Arigon</h1>
+								<p>Да начни уже играть с нами на Arizona Arigon!.</a></p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="https://arigonaforum.xyz/index.php">Форум</a></li>
+								<li><a href="#howtoplay">Как играть</a></li>
+								<li><a href="#about">О проекте</a></li>
+								<li><a href="#donate">Донат</a></li>
+							</ul>
+						</nav>
+					</header>
+
+					<div id="main">
+
+							<article id="howtoplay">
+								<center><h2 class="major">Как начать играть ?</h2></center
+								<p><center><font size="4">Первый шаг</font></center></p>
+								<p>Cкачать лаунчер <a href="https://drive.google.com/file/d/1CaORif80aXWvjjOGYa6NPJm56LXDpXYF/view?usp=drive_link">(PC Launcher).</a></p>
+								<p><center><font size ="4">Второй шаг</font></center></p>
+								<p>Открыть лаунчер, та и все, че сложного?</p>
+							</article>
+
+							<article id="about">
+								<center><h2 class="major">О проекте</h2></center>
+								<p>Arizona Arigon,это один и самых прогресивных и качественых проектов среди конкурентов...</p>
+							</article>
+
+							<article id="donate">
+								<center><h2 class="major">Донат</h2></center>
+                                <div class="toggle-content text-center" id="tab2">
+                                    <center><form action="connect.html">
+									<div>
+									<input id='nickname' type="text" name="account" maxlength='48' placeholder='Игровой ник'>
+									</div>
+									<br>
+									<div>
+									<input id='money' type="text" name="sum" maxlength='12' placeholder='Сумма пополнения'>
+									</div>
+									<div>
+									<br>
+									<input class="orange_button" type="submit" value="Пополнить счет">
+									</div>
+									</form></center>
+									</strong> 
+                                </div>
+							</article>
+					</div>
+
+					<footer id="footer">
+						<p class="copyright">&copy;Arizona Arigon 2025</a>.</p>
+						<a href="https://freekassa.com" target="_blank" rel="noopener noreferrer">
+							<img src="https://cdn.freekassa.com/banners/big-white-2.png" title="Прием платежей на сайте">
+						  </a>
+					</footer>
+
+			</div>
+
+			<div id="bg"></div>
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
